@@ -1,0 +1,20 @@
+<div class="group">
+  <%= f.label :name %><%= f.error_message_on :name %>
+  <%= f.text_field :name, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :address %><%= f.error_message_on :address %>
+  <%= f.text_field :address, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :tel %><%= f.error_message_on :tel %>
+  <%= f.text_field :tel, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+
+<div class="group navform wat-cf">
+  <%= f.submit pat(:save), :class => :button %>
+  <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:shops, :index)}';return false", :class => :button %>
+</div>
