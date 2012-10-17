@@ -21,11 +21,11 @@
         <% @timeboxes.each do |timebox| %>
         <tr>
           <td class="first"><%= timebox.id %></td>
-          <td><%= timebox.start %></td>
-          <td><%= timebox.end %></td>
+          <td><%= timebox.start.strftime('%H:%M') %></td>
+          <td><%= timebox.end.strftime('%H:%M') %></td>
           <td><%= timebox.created_at %></td>
           <td><%= timebox.updated_at %></td>
-          <td><%= timebox.shop_id %></td>
+          <td><%= timebox.shop.name %></td>
           <td class="last">
             <%= button_to pat(:edit), url(:timeboxes, :edit, :id => timebox.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:timeboxes, :destroy, :id => timebox.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
